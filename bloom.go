@@ -13,12 +13,10 @@ import (
 type Bloom struct {
 	counter []uint64
 	size    uint64
+	keys    int
 
 	hashFNV hash.Hash64
-
-	keys int
-
-	mu sync.RWMutex
+	mu      sync.RWMutex
 }
 
 func New(size uint64, keys int) *Bloom {
